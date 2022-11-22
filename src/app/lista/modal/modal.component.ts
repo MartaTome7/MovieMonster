@@ -1,5 +1,4 @@
 import { Component, Input, ViewChild, OnInit, ElementRef } from '@angular/core';
-import { HttpMovieInfoService } from './http-movie-info.service';
 
 @Component({
   selector: 'modal',
@@ -20,24 +19,6 @@ export class ModalComponent implements OnInit {
 
   open() {
     this.modal.nativeElement.style.display = 'block';
-
-    //this.httpService.getMovieInfo(this.modalImdbID).subscribe({
-    //  next: (response) => {
-    //    this.movieInfo = response;
-    //  },
-    //  error: (error: any) => {
-    //    console.error(error),
-    //      console.error('Request failed with error'),
-    //      (this.errorMessage = error),
-    //      (this.loading = false);
-    //  },
-    //  complete: () => {
-    //    //console.error('Request completed');
-    //    this.loading = false;
-    //  },
-    //});
-
-    //console.log(this.movieInfo);
   }
 
   close() {
