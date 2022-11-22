@@ -9,12 +9,67 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content {
+  position: relative;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
+  padding-top: 80px;
   border: 1px solid #888;
   width: 80%;
+}
+
+table {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+  background-color: rgb(136, 206, 208);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+tbody tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(odd) td {
+  background-color: rgba(136, 206, 208, 0.299);
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: rgb(246, 255, 255);
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title {
+  position: absolute;
+  top: 0px;
+  left: 20px;
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ModalComponent } from './modal/modal.component';
-import { HttpMovieInfoService } from './http-movie-info.service';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'lista',
@@ -8,17 +8,16 @@ import { HttpMovieInfoService } from './http-movie-info.service';
   styleUrls: ['./lista.component.css'],
 })
 export class ListaComponent implements OnInit {
-  private httpService: HttpMovieInfoService;
-
   @Input() listaFilmes: any;
 
   @ViewChild('modal', { static: false }) modal: ModalComponent;
 
-  constructor() {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit() {}
 
   openModel(imdbID: string) {
+    // obter informacao do filme
     this.httpService.getMovieInfo(imdbID).subscribe({
       next: (response) => {
         this.modal.movieInfo = response;
@@ -35,11 +34,11 @@ export class ListaComponent implements OnInit {
       },
     });
 
-    //console.log(this.movieInfo);
-
-    this.modal.open();
     this.modal.modalImdbID = imdbID;
 
     console.log(this.modal.modalImdbID);
+    console.log(this.modal.movieInfo);
+
+    this.modal.open();
   }
 }

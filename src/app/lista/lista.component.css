@@ -15,6 +15,7 @@ thead td {
   width: 20%;
   font-size: 20px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :host ::ng-deep tbody tr td {
@@ -22,6 +23,7 @@ thead td {
   padding-bottom: 10px;
   cursor: pointer;
   font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :host ::ng-deep tbody tr:nth-child(odd) td {
