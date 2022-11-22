@@ -1,0 +1,30 @@
+<h1>Movie Monster!</h1>
+
+<br />
+
+<input
+  id="pesquisa"
+  name="pesquisa"
+  type="text"
+  placeholder="Nome do filme"
+  #pesquisa
+/>
+
+<button type="button" id="btnPesquisa" (click)="getMovie(pesquisa.value)">
+  Pesquisar
+</button>
+
+<br /><br />
+
+<div *ngIf="loading">loading...</div>
+
+<div *ngIf="errorMessage">
+  <strong>Warning!</strong> {{ errorMessage | json }}
+</div>
+
+<br /><br />
+
+<lista id="listaID" [listaFilmes]="appFilmes"></lista>
+
+<!-- <hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p> -->

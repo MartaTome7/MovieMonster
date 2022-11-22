@@ -1,0 +1,19 @@
+p {
+  font-family: Lato;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+h1,
+button,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input, button{
+  margin-right: 10px;
+  font-size: 16px;
+}
