@@ -36,7 +36,7 @@ export class RowComponent implements OnInit {
       },
     });
 
-    this.modal.modalImdbID = imdbID;
+    this.modal.modalImdbID = this.filme.imdbID;
 
     console.log(this.modal.modalImdbID);
     console.log(this.modal.movieInfo);

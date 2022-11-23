@@ -1,5 +1,5 @@
 <div id="tabDados" *ngIf="listaFilmes.Search !== undefined">
-  <div *ngFor="let filme of listaFilmes.Search">
+  <div class="row" *ngFor="let filme of listaFilmes.Search">
     <row [filme]="filme"></row>
   </div>
 </div>
