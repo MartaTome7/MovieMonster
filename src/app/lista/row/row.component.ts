@@ -1,14 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { HttpService } from '../../http.service';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
-  selector: 'app-row',
+  selector: 'row',
   templateUrl: './row.component.html',
   styleUrls: ['./row.component.css'],
 })
 export class RowComponent implements OnInit {
   @Input() filme: any;
 
-  constructor() {}
+  @ViewChild('modal', { static: false }) modal: ModalComponent;
+
+  constructor(private httpService: HttpService) {}
 
   ngOnInit() {}
+
+  openModel(imdbID: string) {
+    console.log("entrei")
+    // obter informacao do filme
+    this.httpService.getMovieInfo(imdbID).subscribe({
+      next: (response) => {
+        this.modal.movieInfo = response;
+      },
+      error: (error: any) => {
+        console.error(error),
+          console.error('Request failed with error'),
+          (this.modal.errorMessage = error),
+          (this.modal.loading = false);
+      },
+      complete: () => {
+        //console.error('Request completed');
+        this.modal.loading = false;
+      },
+    });
+
+    this.modal.modalImdbID = imdbID;
+
+    console.log(this.modal.modalImdbID);
+    console.log(this.modal.movieInfo);
+
+    this.modal.open();
+  }
 }
