@@ -11,16 +11,7 @@
     </thead>
     <tbody id="tabDados" *ngIf="listaFilmes.Search !== undefined">
       <tr *ngFor="let filme of listaFilmes.Search">
-        <td>
-          <img
-            src="{{ filme.Poster }}"
-            (click)="openModel(imbdID.innerText)"
-          />
-        </td>
-        <td>{{ filme.Title }}</td>
-        <td>{{ filme.Type }}</td>
-        <td>{{ filme.Year }}</td>
-        <td #imbdID>{{ filme.imdbID }}</td>
+        <row [filme]="filme"></row>
       </tr>
     </tbody>
   </table>
