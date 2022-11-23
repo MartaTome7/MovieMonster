@@ -1,10 +1,11 @@
-import { Component, Input, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
 })
+
 export class ModalComponent implements OnInit {
   modalImdbID: string = null;
   movieInfo: any;

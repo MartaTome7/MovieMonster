@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Filme } from '../../Filme';
 import { HttpService } from '../../http.service';
 import { ModalComponent } from './modal/modal.component';
 
@@ -8,7 +9,7 @@ import { ModalComponent } from './modal/modal.component';
   styleUrls: ['./row.component.css'],
 })
 export class RowComponent implements OnInit {
-  @Input() filme: any;
+  @Input() filme: Filme;
 
   @ViewChild('modal', { static: false }) modal: ModalComponent;
 
@@ -16,10 +17,10 @@ export class RowComponent implements OnInit {
 
   ngOnInit() {}
 
-  openModel(imdbID: string) {
-    console.log("entrei")
+  openModel() {
+    console.log('entrei');
     // obter informacao do filme
-    this.httpService.getMovieInfo(imdbID).subscribe({
+    this.httpService.getMovieInfo(this.filme.imdbID).subscribe({
       next: (response) => {
         this.modal.movieInfo = response;
       },

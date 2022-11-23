@@ -1,9 +1,3 @@
-<tr>
-  <td>
-    <img src="{{ filme.Poster }}" (click)="openModel(imbdID.innerText)" />
-  </td>
-  <td>{{ filme.Title }}</td>
-  <td>{{ filme.Type }}</td>
-  <td>{{ filme.Year }}</td>
-  <td #imbdID>{{ filme.imdbID }}</td>
-</tr>
+<img src="{{ filme.Poster }}" (click)="openModel()" />
+
+<modal #modal></modal>
